@@ -1,0 +1,16 @@
+[build]
+     functions = "netlify/functions"
+     publish = "public"
+   
+   [[redirects]]
+     from = "/api/*"
+     to = "/.netlify/functions/:splat"
+     status = 200
+   
+   [functions]
+     node_bundler = "esbuild"
+     external_node_modules = ["pdfkit", "canvas"]
+   
+   [dev]
+     port = 2206
+     publish = "public"
